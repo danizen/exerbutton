@@ -16,12 +16,7 @@ Buttons table determines what buttons to show
 Holds data for what happened for each user on each day
   - user_id(hash_key=True)
   - date(range_key)
-  - uuid
-  - count (usually 1)
-
-### ButtonActivity
-
-Local Secondary index on DailyActivity with range_key on uuid field
+  - map of uuid to count
  
 ### Drawing the table
 
@@ -38,3 +33,11 @@ If the user wants analytics, we might need to retrieve the data for a particular
 - JavaScript and HTML published to S3 and served by CloudFront
 - JavaScript runs authentication through Cognito and forwards JWT
 https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-integrate-with-cognito.html
+
+## API Operations
+
+- GET users active buttons
+- Create button
+- Edit button
+- Archive button
+- Press Button - activity
