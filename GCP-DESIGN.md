@@ -1,5 +1,12 @@
 # Exerbutton
 
+## Services
+
+client_id - 419844095752-prqfpp0u6c6gkdub0gssgog8ud84eta3.apps.googleusercontent.com
+
+client-key - 
+8nETfysqQxauuYFtt2zNNiI3
+
 ## Data Model
 
 ### Buttons

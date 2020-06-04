@@ -1,0 +1,22 @@
+{
+  "name": "execbutton-api",
+  "version": "1.0.0",
+  "description": "Manages a user specific list of buttons and counts",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "keywords": [],
+  "author": "Dan Davis",
+  "license": "ISC",
+  "devDependencies": {
+    "firebase-tools": "^8.4.1"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
