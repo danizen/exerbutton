@@ -1,12 +1,28 @@
 'use strict';
 
 // [START gae_node_request_example]
-const express = require('express');
+const express      = require('express');
+const bodyParser   = require('body-parser');
+const cors         = require('cors');
+const app          = express();
 
-const app = express();
+
+app.use(cors())
+   .use(bodyParser.json())
+   .use(bodyParser.urlencoded({extended: false}));
 
 app.get('/', (req, res) => {
-  res.status(200).send('Hello, world!').end();
+  res.status(200).json({
+    success: true,
+    message: 'Hello, world!'
+  });
+});
+
+app.get('*', (req, res) => {
+  res.status(200).json({
+    success: false,
+    message: 'Endpoint not found'
+  });
 });
 
 // Start the server
