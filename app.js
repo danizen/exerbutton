@@ -14,7 +14,7 @@ app.use(cors())
 app.get('/', (req, res) => {
   res.status(200).json({
     success: true,
-    message: 'Hello, world!'
+    message: 'Hello, world (with auto deploy)!'
   });
 });
 
