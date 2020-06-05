@@ -19,7 +19,7 @@ steps:
   - id: unittest
     name: node:10
     entrypoint: npm
-    args: ['run', 'test']
+    args: ['test']
     waitFor:
       - install
   # deploy the application

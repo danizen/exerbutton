@@ -18,7 +18,8 @@ node_modules/
 .serverless
 
 # tests
-tests/
+*.test.js
+*.spec.js
 
 # READMEs
 *.md
