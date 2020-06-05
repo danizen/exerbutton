@@ -1,0 +1,17 @@
+# Lint the code,
+# Run tests,
+# and Deploy the app
+---
+steps:
+  # install the node dependencies
+  - name: node:10
+    entrypoint: npm
+    args: ['install']
+  # run lint
+  - name: node:10
+    entrypoint: npm
+    args: ['run', 'lint']
+  # deploy the application
+  - name: 'gcr.io/cloud-builders/gcloud'
+    args: ['app', 'deploy']
+    timeout: '1600s'
