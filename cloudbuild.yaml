@@ -15,6 +15,13 @@ steps:
     args: ['run', 'lint']
     waitFor:
       - install
+  # run tests
+  - id: unittest
+    name: node:10
+    entrypoint: npm
+    args: ['run', 'test']
+    waitFor:
+      - install
   # deploy the application
   - id: deploy
     name: 'gcr.io/cloud-builders/gcloud'
@@ -22,3 +29,4 @@ steps:
     timeout: '600s'
     waitFor:
       - lint
+      - unittest
