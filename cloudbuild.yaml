@@ -4,14 +4,21 @@
 ---
 steps:
   # install the node dependencies
-  - name: node:10
+  - id: install
+    name: node:10
     entrypoint: npm
     args: ['install']
-  # run lint
-  - name: node:10
+  # run eslint
+  - id: lint
+    name: node:10
     entrypoint: npm
     args: ['run', 'lint']
+    waitFor:
+      - install
   # deploy the application
-  - name: 'gcr.io/cloud-builders/gcloud'
+  - id: deploy
+    name: 'gcr.io/cloud-builders/gcloud'
     args: ['app', 'deploy']
     timeout: '600s'
+    waitFor:
+      - lint
